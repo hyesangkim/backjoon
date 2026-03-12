@@ -1,27 +1,30 @@
 package 코딩테스트;
 
-import java.util.Random;
+import java.io.BufferedReader; 
+import java.io.IOException; 
+import java.io.InputStreamReader; 
+import java.util.StringTokenizer; 
 public class 수_찾기_1920 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Random random = new Random();
-		int N = (int)(Math.random() * 100000) + 1; // 자연수 N 생성
-		int M = (int)(Math.random() * 100000) + 1; // 자연수 M 생성
-		int [] Narray = new int[N]; // N 수 만큼의 배열 생성
-		int [] Marray = new int[M]; // M 수 만큼의 배열 생성
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // 바이트 입력을 문자로 바꿔서 읽기
+		StringTokenizer tokenizer = new StringTokenizer(reader.readLine()); // 입력 한 줄을 읽고 공백 기준으로 나누기
+		int N = Integer.parseInt(tokenizer.nextToken());
+		int [] NArray = new int[N];
+		for(int i=0; i < NArray.length; i++) {
+			NArray[i] = Integer.parseInt(tokenizer.nextToken()); // 공백 기준으로 나눈 걸 다시 정수로 변환
+		}
 		
-		// Narray에 정수 난수 생성
-		for(int i=0; i < Narray.length; i++) {
-			Narray[i] = random.nextInt();
+		int M = Integer.parseInt(tokenizer.nextToken());
+		int [] MArray = new int[M];
+		for(int i=0; i< MArray.length; i++) {
+			MArray[i] = Integer.parseInt(tokenizer.nextToken());
 		}
-		// Marray에 정수 난수 생성
-		for(int i=0; i < Marray.length; i++) {
-			Marray[i] = random.nextInt();
-		}
+		
 		
 		// 함수 호출
-		comparison(Marray, Narray);
+		comparison(NArray, MArray);
 	}
 	// 비교 함수
 	public static void comparison(int[] a, int[] b) {
