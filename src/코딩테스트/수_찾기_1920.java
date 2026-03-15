@@ -9,22 +9,22 @@ public class 수_찾기_1920 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); // 바이트 입력을 문자로 바꿔서 읽기
-		StringTokenizer tokenizer = new StringTokenizer(reader.readLine()); // 입력 한 줄을 읽고 공백 기준으로 나누기
-		int N = Integer.parseInt(tokenizer.nextToken());
+		int N = Integer.parseInt(reader.readLine());
 		int [] NArray = new int[N];
-		for(int i=0; i < NArray.length; i++) {
-			NArray[i] = Integer.parseInt(tokenizer.nextToken()); // 공백 기준으로 나눈 걸 다시 정수로 변환
+		StringTokenizer st = new StringTokenizer(reader.readLine());
+		for (int i = 0; i < N; i++) {
+		    NArray[i] = Integer.parseInt(st.nextToken());
 		}
-		
-		int M = Integer.parseInt(tokenizer.nextToken());
+		int M = Integer.parseInt(reader.readLine());
 		int [] MArray = new int[M];
-		for(int i=0; i< MArray.length; i++) {
-			MArray[i] = Integer.parseInt(tokenizer.nextToken());
+		st = new StringTokenizer(reader.readLine());
+		for (int i = 0; i < M; i++) {
+		    MArray[i] = Integer.parseInt(st.nextToken());
 		}
-		
+		reader.close();
 		
 		// 함수 호출
-		comparison(NArray, MArray);
+		comparison(MArray, NArray);
 	}
 	// 비교 함수
 	public static void comparison(int[] a, int[] b) {
