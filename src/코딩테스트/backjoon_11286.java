@@ -32,7 +32,8 @@ public class backjoon_11286 {
 				if (minheap.isEmpty() == true) {
 					System.out.println(0);
 				}
-				System.out.println(minheap.poll());
+				// else를 안 붙이면 k가 0이고 minheap이 비워져 있어도 그냥 null이 출력되므로 else를 꼭 붙인다!
+				else System.out.println(minheap.poll());
 			
 			}
 		}
